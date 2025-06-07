@@ -9,6 +9,26 @@ class User(BaseModel):
     age: int
     email: str
 
+class PersonResponse(BaseModel):
+    message: str
+
 @app.post("/users/")
 async def create_user(user: User):
     return user
+
+from pydantic import BaseModel
+from fastapi import FastAPI
+
+app = FastAPI()
+
+class Person(BaseModel):
+    name: str
+    age: int
+
+@app.post("/create_person")
+async def create_person(person: Person):
+    return{"message:" f"Person {person.name} create with age {person.age}"}
+
+@app.post("/create_person/", response_model=PersonResponse)
+async def create_person(person: Person):
+    return {"message": f"Person {person.name} create with age {person.age}"}

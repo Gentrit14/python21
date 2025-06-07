@@ -1,18 +1,5 @@
-data ={
-    "name": "Johny Deep",
-    "age": 30,
-    "address":{
-        "street": "123 street",
-        "city": "Prishtina"
-    },
-    "contact": [
-        {
-            "type": "email"
-        },
-        {
-            "type": "phone"
-        }
-    ]
-}
+import uvicorn
+from api_development.api import app
 
-print(data["contact"][0]["type"])
+if __name__ == "__main__":
+    uvicorn.run(app, host='127.0.0.1', port=8000)
