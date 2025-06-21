@@ -27,7 +27,7 @@ class Person(BaseModel):
 
 @app.post("/create_person")
 async def create_person(person: Person):
-    return{"message:" f"Person {person.name} create with age {person.age}"}
+    return{"message:" f"Person {person.name} create wth age {person.age}"}
 
 @app.post("/create_person/", response_model=PersonResponse)
 async def create_person(person: Person):
