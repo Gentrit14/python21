@@ -42,3 +42,13 @@ if st.button("get Project"):
 
         st.subheader("Project Overview")
         st.dataframe(projects_df)
+
+        st.subheader("Project    Details")
+        for project in project_data:
+            st.markdown(f"**Title:** {project['title']}")
+            st.markdown(f"**Description:** {project["description"]}")
+            st.markdown(f"**Language:** {', '.join(project['language'])}")
+            st.markdown(f"**Lead Developer:**{project['lead_developer']['name']} with {project['lead_developer']['experience']} years of experience")
+            st.markdown(f"---")
+        else:
+            st.warning('no projects found.')

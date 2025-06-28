@@ -19,4 +19,4 @@ def get_project():
         language = ["python", "JavaScript"],
         lead_developer = Developer(name="John Doe", experience=5)
     )
-    return {"Projects": [sample_project]}
+    return {"projects": [sample_project]}
